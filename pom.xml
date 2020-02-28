@@ -289,7 +289,6 @@
           <threshold>Low</threshold>
           <effort>Max</effort>
           <failOnError>true</failOnError>
-          <excludeFilterFile>findbugs-exclude.xml</excludeFilterFile>
         </configuration>
         <executions>
           <execution>
@@ -302,6 +301,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven.compiler.plugin.version}</version>
         <configuration>
           <source>8</source>
           <target>8</target>
