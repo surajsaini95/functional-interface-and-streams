@@ -8,12 +8,15 @@ public class AppDriver {
         StudentUtil studentUtil=new StudentUtil();
         DateAndTimeUtil dateAndTimeUtil=new DateAndTimeUtil();
 
-        System.out.println(studentUtil.getStudentsWithoutSecondaryAddress(StudentUtil.getListOfStudents()));
+        /*System.out.println(studentUtil.getStudentsWithoutSecondaryAddress(StudentUtil.getListOfStudents()));
         System.out.println(studentUtil.getStudentsWithoutSecondaryAddressAndNameFilter(StudentUtil.getListOfStudents()));
 
         int day=10;
         int month=10;
         int year=1995;
         System.out.println(dateAndTimeUtil.getAllDaysOfBirthDate(day,month,year));
+*/
+        String timeZone="Asia/Tokyo";
+        System.out.println(dateAndTimeUtil.getTimeFromTimeZone(timeZone));
     }
 }
