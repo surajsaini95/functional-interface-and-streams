@@ -26,5 +26,12 @@ public class DateAndTimeUtil {
         return Duration.between(LocalDate
                 .parse(birthDate).atStartOfDay(),LocalDate.parse(deathDate).atStartOfDay()).toSeconds();
     }
+    public List<Integer> getLeapYearsAfterFirstRepublicDay() {
+        int firstRepublicDayYear = 1950;
+        String republicDayInMMDD="01-26";
+        int currentRepublicDayYear =LocalDate.now().getYear()+1;
+        return IntStream.range(firstRepublicDayYear,currentRepublicDayYear)
+                .filter(year -> LocalDate.parse(year + "-"+republicDayInMMDD).isLeapYear()).mapToObj(year -> year).collect(Collectors.toList());
+    }
 
- }
+}

@@ -19,10 +19,11 @@ public class AppDriver {
         String timeZone="Asia/Tokyo";
         System.out.println(dateAndTimeUtil.getTimeFromTimeZone(timeZone));
 
-         */
+
         String birthDate="2020-01-01";
         String deathDate="2020-01-02";
         System.out.println(dateAndTimeUtil.getLifeDurationInSeconds(birthDate,deathDate));
-
+*/
+        System.out.println(dateAndTimeUtil.getLeapYearsAfterFirstRepublicDay());
     }
 }
