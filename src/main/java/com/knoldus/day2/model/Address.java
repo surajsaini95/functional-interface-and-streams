@@ -23,7 +23,7 @@ public class Address {
     public String toString() {
         String address = "primaryAddress= '" + getPrimaryAddress() + "'";
         if (getSecondaryAddress().isPresent())
-            return address + " secondaryAddress= '" + getSecondaryAddress() + ";";
+            return address + " secondaryAddress= '" + getSecondaryAddress().orElse("") + ";";
         else
             return address;
     }

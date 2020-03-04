@@ -2,41 +2,46 @@ package com.knoldus.day2.controller;
 
 import com.knoldus.day2.model.Student;
 
-import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 public class StudentCRUD {
 
-    public static List<Student> students = Collections.emptyList();
+    StudentCRUDService studentCRUDService = new StudentCRUDService();
 
-    public List<Student> getStudents() {
-        return students;
+    public CompletableFuture<List<Student>> addStudent(Student student) {
+        return CompletableFuture.supplyAsync(() -> studentCRUDService.addStudent(student))
+                .exceptionally(ex -> {
+                    System.out.println("Some exception occurred while adding new student : " + ex.getMessage());
+                    return studentCRUDService.getStudents();
+                });
+
+
     }
 
-    boolean addStudent(Student student) {
-        return students.add(student);
+    public CompletableFuture<Student> getStudentById(int studentId) {
+        return CompletableFuture.supplyAsync(() -> studentCRUDService.getStudentById(studentId))
+                .exceptionally(ex -> {
+                    System.out.println("Some exception occurred while retrieving  student : " + ex.getMessage());
+                    return new Student();
+                });
     }
 
-    Student getStudentById(int studentId) {
-        Student defaultStudent = new Student();
-        return students.stream().filter(student -> student.getId() == studentId).findFirst().orElse(defaultStudent);
+    public CompletableFuture<List<Student>> updateStudent(Student student) {
+        return CompletableFuture.supplyAsync(() -> studentCRUDService.updateStudent(student))
+                .exceptionally(ex -> {
+                    System.out.println("Some exception occurred while updating  student : " + ex.getMessage());
+                    return studentCRUDService.getStudents();
+                });
     }
 
-    boolean updateStudent(Student student) {
-        if (getStudentById(student.getId()).isValid()) {
-            deleteStudentById(student.getId());
-            return addStudent(student);
-        } else {
-            return false;
-        }
-    }
-
-    boolean deleteStudentById(int studentId) {
-        if (getStudentById(studentId).isValid()) {
-            return students.remove(getStudentById(studentId));
-        } else {
-            return false;
-        }
+    public CompletableFuture<List<Student>> deleteStudentById(int studentId) {
+        return CompletableFuture
+                .supplyAsync(() -> studentCRUDService.deleteStudentById(studentId))
+                .exceptionally(ex -> {
+                    System.out.println("Some exception occurred while deleting student : " + ex.getMessage());
+                    return studentCRUDService.getStudents();
+                });
     }
 
 
