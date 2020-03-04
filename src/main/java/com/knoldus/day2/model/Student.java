@@ -8,6 +8,17 @@ public class Student {
     int age;
     Address address;
 
+    public Student() {
+        id=0;
+        name=null;
+        age=0;
+        address=null;
+    }
+
+    public int getId() {
+        return id;
+    }
+
     public Student(int id, String name, int age, String primaryAddress, String secondaryAddress) {
         this.id = id;
         this.name = name;
@@ -40,5 +51,12 @@ public class Student {
                 ", age=" + age +
                 ", address=" + address +
                 '}';
+    }
+
+    public boolean isValid() {
+        if(this.id>0)
+            return true;
+        else
+            return false;
     }
 }

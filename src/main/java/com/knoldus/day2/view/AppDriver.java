@@ -6,11 +6,12 @@ import com.knoldus.day2.controller.WordCountUtil;
 
 public class AppDriver {
     public static void main(String[] args) {
+
         StudentUtil studentUtil = new StudentUtil();
         DateAndTimeUtil dateAndTimeUtil = new DateAndTimeUtil();
         WordCountUtil wordCountUtil = new WordCountUtil();
 
-        /*System.out.println(studentUtil.getStudentsWithoutSecondaryAddress(StudentUtil.getListOfStudents()));
+        System.out.println(studentUtil.getStudentsWithoutSecondaryAddress(StudentUtil.getListOfStudents()));
         System.out.println(studentUtil.getStudentsWithoutSecondaryAddressAndNameFilter(StudentUtil.getListOfStudents()));
 
         int day=10;
@@ -28,7 +29,7 @@ public class AppDriver {
 
         System.out.println(dateAndTimeUtil.getLeapYearsAfterFirstRepublicDay());
 
-         */
+
         String filePath = "./src/main/resources/data";
         System.out.println(wordCountUtil.getWordCountOfDataFromFile(filePath));
     }
