@@ -1,4 +1,4 @@
-package com.knoldus.model;
+package com.knoldus.day1.model;
 
 /**
  * This class can have methods to perform operations on hobbies.

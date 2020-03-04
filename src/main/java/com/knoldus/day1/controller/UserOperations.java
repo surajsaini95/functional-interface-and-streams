@@ -1,6 +1,6 @@
-package com.knoldus.controller;
+package com.knoldus.day1.controller;
 
-import com.knoldus.model.User;
+import com.knoldus.day1.model.User;
 
 import java.util.List;
 import java.util.stream.Collectors;

@@ -1,9 +1,9 @@
-package com.knoldus.view;
+package com.knoldus.day1.view;
 
-import com.knoldus.model.Hobbies;
-import com.knoldus.model.MyHobbies;
-import com.knoldus.model.User;
-import com.knoldus.controller.UserOperations;
+import com.knoldus.day1.model.Hobbies;
+import com.knoldus.day1.model.MyHobbies;
+import com.knoldus.day1.model.User;
+import com.knoldus.day1.controller.UserOperations;
 
 import java.util.Arrays;
 import java.util.List;

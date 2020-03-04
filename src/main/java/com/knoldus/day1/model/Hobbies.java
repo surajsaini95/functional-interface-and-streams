@@ -1,4 +1,4 @@
-package com.knoldus.model;
+package com.knoldus.day1.model;
 
 /**
  * This is a functional Interface with a single abstract method that takes 5 input parameters and returns the result.

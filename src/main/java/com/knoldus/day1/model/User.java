@@ -1,4 +1,4 @@
-package com.knoldus.model;
+package com.knoldus.day1.model;
 
 /**
  * This is a model class representing a User.
