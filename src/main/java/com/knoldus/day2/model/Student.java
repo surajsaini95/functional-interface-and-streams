@@ -9,14 +9,10 @@ public class Student {
     Address address;
 
     public Student() {
-        id=0;
-        name=null;
-        age=0;
-        address=null;
-    }
-
-    public int getId() {
-        return id;
+        id = 0;
+        name = null;
+        age = 0;
+        address = null;
     }
 
     public Student(int id, String name, int age, String primaryAddress, String secondaryAddress) {
@@ -35,6 +31,10 @@ public class Student {
         this.address = address;
     }
 
+    public int getId() {
+        return id;
+    }
+
     public String getName() {
         return name;
     }
@@ -45,18 +45,19 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", age=" + age +
-                ", address=" + address +
-                '}';
+        return "Student{"
+                + "id=" + id
+                + ", name='" + name + '\''
+                + ", age=" + age
+                + ", address=" + address
+                + '}';
     }
 
     public boolean isValid() {
-        if(this.id>0)
+        if (this.id > 0) {
             return true;
-        else
+        }else {
             return false;
+        }
     }
 }

@@ -13,7 +13,6 @@ public class StudentUtil {
         String name = "sam";
         int age = 10;
         String primaryAddress = "delhi";
-        String secondaryAddress = "noida";
         Student s1 = new Student(id, name, age, primaryAddress);
 
         id = 2;
@@ -26,6 +25,7 @@ public class StudentUtil {
         name = "toni";
         age = 15;
         primaryAddress = "jaipur";
+        String secondaryAddress = "noida";
         Student s3 = new Student(id, name, age, primaryAddress, secondaryAddress);
 
         id = 4;
@@ -38,7 +38,7 @@ public class StudentUtil {
         name = "ali";
         age = 18;
         primaryAddress = "gurgaon";
-        secondaryAddress = "noida";
+        String secondaryAddress2 = "delhi";
         Student s5 = new Student(id, name, age, primaryAddress, secondaryAddress);
 
         return Arrays.asList(s1, s2, s3, s4, s5);

@@ -15,12 +15,12 @@ public class Address {
         return primaryAddress;
     }
 
-   public Optional<String> getSecondaryAddress() {
+    public Optional<String> getSecondaryAddress() {
         return secondaryAddress;
     }
 
-   @Override
-   public String toString() {
+    @Override
+    public String toString() {
         String address = "primaryAddress= '" + getPrimaryAddress() + "'";
         if (getSecondaryAddress().isPresent())
             return address + " secondaryAddress= '" + getSecondaryAddress() + ";";
