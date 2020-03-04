@@ -1,5 +1,6 @@
 package com.knoldus.day2.controller;
 
+import java.time.Duration;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
@@ -20,6 +21,10 @@ public class DateAndTimeUtil {
         String timeFromTimeZone = zonedDateTime.format(DateTimeFormatter.ISO_LOCAL_TIME) + " - " + timeZone + ",UTC"
                 + zonedDateTime.getOffset().toString();
         return timeFromTimeZone;
+    }
+    public Long getLifeDurationInSeconds(String birthDate, String deathDate) {
+        return Duration.between(LocalDate
+                .parse(birthDate).atStartOfDay(),LocalDate.parse(deathDate).atStartOfDay()).toSeconds();
     }
 
  }
